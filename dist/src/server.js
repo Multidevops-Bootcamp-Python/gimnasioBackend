@@ -8,6 +8,7 @@ const helmet_1 = __importDefault(require("helmet")); //politicas de seguridad
 const morgan_1 = __importDefault(require("morgan")); //monitorear empoind
 const dotenv_1 = __importDefault(require("dotenv")); //rea las variables de entorno
 const router_1 = __importDefault(require("./router"));
+//import { createConnection } from './../db/models/db_connection';
 const app = (0, express_1.default)(); //inicia el servicidor
 dotenv_1.default.config(); //configura variales de entorno
 /********middleware generales********/

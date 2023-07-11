@@ -3,6 +3,7 @@ import helmet from "helmet";//politicas de seguridad
 import morgan from 'morgan';//monitorear empoind
 import dotenv from 'dotenv'; //rea las variables de entorno
 import router from './router'
+import { createConnection } from './../db/models/db_connection';
 
 const app = express();  //inicia el servicidor
 dotenv.config();//configura variales de entorno
@@ -15,6 +16,7 @@ app.use(helmet());//configuro politicas
 app.use(morgan('dev'));//configuro morgan
 
 app.use('/', router);
+const sequelizeInstance = createConnection()
 
 const PORT = process.env.PORT || 3000 //uso la variable entorno paraestablecer el puerto
 app.listen(PORT, () => {
